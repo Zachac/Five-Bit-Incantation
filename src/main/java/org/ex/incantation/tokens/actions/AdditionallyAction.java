@@ -4,8 +4,8 @@ import org.ex.incantation.execution.ExecutionContext;
 
 public class AdditionallyAction implements Action {
 
-	public Action action1;
-	public Action action2;
+	public final Action action1;
+	public final Action action2;
 	
 	public AdditionallyAction(Action action1, Action action2) {
 		super();

@@ -5,8 +5,8 @@ import org.ex.incantation.tokens.tests.Test;
 
 public class WhileAction implements Action {
 
-	public Test test;
-	public Action action;
+	public final Test test;
+	public final Action action;
 
 	public WhileAction(Test test, Action action) {
 		super();

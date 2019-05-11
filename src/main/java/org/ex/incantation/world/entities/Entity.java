@@ -35,4 +35,9 @@ public interface Entity {
 	 */
 	Shape shape();
 
+	/**
+	 * Get the entities this entity is touching
+	 */
+	Entity[] getTouching();
+
 }

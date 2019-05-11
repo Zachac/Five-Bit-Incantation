@@ -1,6 +1,5 @@
 package org.ex.incantation.execution;
 
-import org.ex.incantation.tokens.search.Search;
 import org.ex.incantation.world.World;
 import org.ex.incantation.world.entities.Entity;
 
@@ -16,11 +15,17 @@ public class ExecutionContext {
 		this.world = world;
 	}
 	
-	public World world() {
+	/**
+	 * @return the world this was executed in.
+	 */
+	public World getWorld() {
 		return world;
 	}
 
-	public Entity self() {
+	/**
+	 * @return the executor of the context.
+	 */
+	public Entity getSelf() {
 		return self;
 	}
 	
@@ -37,10 +42,4 @@ public class ExecutionContext {
 	public void push(Entity e) {
 		aforementioned.push(e);
 	}
-
-	public void instantiate(Search search) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }

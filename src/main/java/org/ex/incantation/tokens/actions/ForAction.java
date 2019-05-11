@@ -6,8 +6,8 @@ import org.ex.incantation.world.entities.Entity;
 
 public class ForAction implements Action {
 
-	public Search search;
-	public Action action;
+	public final Search search;
+	public final Action action;
 	
 	public ForAction(Search search, Action action) {
 		super();

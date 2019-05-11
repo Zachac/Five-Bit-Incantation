@@ -6,8 +6,8 @@ import org.ex.incantation.tokens.search.Search;
 
 public class InstantiateAction implements Action {
 
-	NumberValue number;
-	Search search;
+	public final NumberValue number;
+	public final Search search;
 
 	public InstantiateAction(NumberValue number, Search search) {
 		super();
@@ -16,6 +16,6 @@ public class InstantiateAction implements Action {
 	}
 
 	public void execute(ExecutionContext context) {
-		context.instantiate(search);
+		context.getWorld().instantiate(number.value, search);
 	}
 }

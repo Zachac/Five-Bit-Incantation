@@ -6,7 +6,7 @@ import org.ex.incantation.world.entities.Entity;
 
 public class AforementionedIdentifier implements Identifier {
 
-	NumberValue idNumber;
+	public final NumberValue idNumber;
 
 	public AforementionedIdentifier(NumberValue idNumber) {
 		super();

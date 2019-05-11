@@ -9,7 +9,7 @@ import org.ex.incantation.world.entities.Entity;
 
 public class InsideLocation implements Location {
 
-	public Identifier identifier;
+	public final Identifier identifier;
 
 	public InsideLocation(Identifier identifier) {
 		super();

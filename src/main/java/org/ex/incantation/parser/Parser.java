@@ -21,7 +21,6 @@ import static org.ex.incantation.tokens.literals.LitteralToken.INSTANTIATE;
 import static org.ex.incantation.tokens.literals.LitteralToken.INVERT;
 import static org.ex.incantation.tokens.literals.LitteralToken.MOVE;
 import static org.ex.incantation.tokens.literals.LitteralToken.NEAR;
-import static org.ex.incantation.tokens.literals.LitteralToken.OWNED;
 import static org.ex.incantation.tokens.literals.LitteralToken.SELF;
 import static org.ex.incantation.tokens.literals.LitteralToken.SIMULTANEOUSLY;
 import static org.ex.incantation.tokens.literals.LitteralToken.TOUCHED;
@@ -56,7 +55,6 @@ import org.ex.incantation.tokens.location.ClosestLocation;
 import org.ex.incantation.tokens.location.InsideLocation;
 import org.ex.incantation.tokens.location.Location;
 import org.ex.incantation.tokens.location.NearLocation;
-import org.ex.incantation.tokens.location.OwnedLocation;
 import org.ex.incantation.tokens.location.TouchedLocation;
 import org.ex.incantation.tokens.search.Search;
 import org.ex.incantation.tokens.shapes.BallShape;
@@ -105,9 +103,7 @@ public class Parser {
 	private static Location recognizeLocation(ReadAheadTokenizer input) throws UnexpectedTokenException {
 		Token t = input.next();
 		
-		if (t == OWNED) {
-			return new OwnedLocation();
-		} else if (t == TOUCHED) {
+		if (t == TOUCHED) {
 			return new TouchedLocation();
 		} else if (t == CLOSEST) {
 			return new ClosestLocation();

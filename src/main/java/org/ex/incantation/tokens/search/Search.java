@@ -7,8 +7,8 @@ import org.ex.incantation.world.entities.Entity;
 
 public class Search {
 
-	Type type;
-	Location location;
+	public final Type type;
+	public final Location location;
 	
 	public Search(Type type, Location location) {
 		super();

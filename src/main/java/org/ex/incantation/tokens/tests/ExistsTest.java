@@ -6,22 +6,23 @@ import org.ex.incantation.tokens.search.Search;
 
 public class ExistsTest implements Test {
 
-	public Search search;
-	public Identifier identifier;
-
+	public final Search search;
+	public final Identifier identifier;
+	
 	public ExistsTest(Search search) {
 		super();
 		this.search = search;
+		this.identifier = null;
 	}
 	
 	public ExistsTest(Identifier identifier) {
 		super();
 		this.identifier = identifier;
+		this.search = null;
 	}
 
 	public boolean value(ExecutionContext context) {
-		// TODO Auto-generated method stub
-		return false;
+		return identifier.value(context) != null;
 	}
 	
 }

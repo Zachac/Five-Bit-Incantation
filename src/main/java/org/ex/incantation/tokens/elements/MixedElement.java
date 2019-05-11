@@ -11,9 +11,15 @@ public class MixedElement implements Element {
 	private boolean calculatedElements = false;
 	private int elements;
 	
-	Element element1;
-	Element element2;
+	public final Element element1;
+	public final Element element2;
 
+	public MixedElement(Element element1, Element element2) {
+		super();
+		this.element1 = element1;
+		this.element2 = element2;
+	}
+	
 	@Override
 	public boolean matches(Element value) {
 		if (!(value instanceof MixedElement)) {

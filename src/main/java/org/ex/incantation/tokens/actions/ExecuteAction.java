@@ -5,7 +5,7 @@ import org.ex.incantation.tokens.identifier.Identifier;
 
 public class ExecuteAction implements Action {
 
-	Identifier identifier;
+	public final Identifier identifier;
 
 	public ExecuteAction(Identifier identifier) {
 		super();

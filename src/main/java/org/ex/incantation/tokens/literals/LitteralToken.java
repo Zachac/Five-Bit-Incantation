@@ -12,7 +12,6 @@ public enum LitteralToken implements Token {
 	INVERT,
 	ID,
 	TOUCHED,
-	OWNED,
 	CLOSEST,
 	NEAR,
 	INSIDE,

@@ -7,8 +7,8 @@ import org.ex.incantation.world.entities.Entity;
 
 public class Type implements Matcher<Entity> {
 
-	Element element;
-	Shape shape;
+	public final Element element;
+	public final Shape shape;
 	
 	public Type(Element element, Shape shape) {
 		super();

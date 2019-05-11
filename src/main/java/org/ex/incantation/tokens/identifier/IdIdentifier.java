@@ -6,7 +6,7 @@ import org.ex.incantation.world.entities.Entity;
 
 public class IdIdentifier implements Identifier {
 
-	NumberValue idNumber;
+	public final NumberValue idNumber;
 
 	public IdIdentifier(NumberValue idNumber) {
 		super();
@@ -14,10 +14,10 @@ public class IdIdentifier implements Identifier {
 	}
 
 	public Entity value(ExecutionContext context) {
-		Entity result = context.self().resolveEntity(idNumber.value);
+		Entity result = context.getSelf().resolveEntity(idNumber.value);
 		
 		if (result == null) {
-			result = context.world().find(idNumber.value);
+			result = context.getWorld().find(idNumber.value);
 		}
 		
 		return result;

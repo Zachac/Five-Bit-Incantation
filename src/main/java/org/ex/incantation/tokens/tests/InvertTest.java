@@ -4,7 +4,7 @@ import org.ex.incantation.execution.ExecutionContext;
 
 public class InvertTest implements Test {
 
-	public Test test;
+	public final Test test;
 
 	public InvertTest(Test test) {
 		super();

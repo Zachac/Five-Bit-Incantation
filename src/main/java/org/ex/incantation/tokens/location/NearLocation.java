@@ -6,9 +6,9 @@ import org.ex.incantation.tokens.types.Type;
 import org.ex.incantation.world.Position;
 import org.ex.incantation.world.entities.Entity;
 
-public class NearLocation implements Location {
+public class NearLocation extends AbstractPositionalLocation {
 
-	public Identifier identifier;
+	public final Identifier identifier;
 
 	public NearLocation(Identifier identifier) {
 		super();
@@ -16,12 +16,11 @@ public class NearLocation implements Location {
 	}
 
 	public Entity[] find(ExecutionContext context, Type type) {
-		// TODO Auto-generated method stub
-		return null;
+		return find(context.getWorld(), identifier.value(context).getPosition(), type);
 	}
 
 	public Position position(ExecutionContext context) {
-		return identifier.value(context).getPosition();
+		return position(context.getWorld(), identifier.value(context).getPosition());
 	}
 	
 }

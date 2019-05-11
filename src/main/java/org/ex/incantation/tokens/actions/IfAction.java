@@ -5,8 +5,8 @@ import org.ex.incantation.tokens.tests.Test;
 
 public class IfAction implements Action {
 
-	public Test test;
-	public Action action;
+	public final Test test;
+	public final Action action;
 	
 	public IfAction(Test test, Action action) {
 		super();

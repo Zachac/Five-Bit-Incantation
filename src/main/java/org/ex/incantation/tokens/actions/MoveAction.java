@@ -6,8 +6,8 @@ import org.ex.incantation.tokens.location.Location;
 
 public class MoveAction implements Action {
 
-	public Identifier identifier;
-	public Location location;
+	public final Identifier identifier;
+	public final Location location;
 	
 	public MoveAction(Identifier identifier, Location location) {
 		super();
