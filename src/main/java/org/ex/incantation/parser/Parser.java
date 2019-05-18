@@ -1,5 +1,7 @@
 package org.ex.incantation.parser;
 
+import static org.ex.incantation.tokens.literals.LitteralToken.ONE;
+import static org.ex.incantation.tokens.literals.LitteralToken.ZERO;
 import static org.ex.incantation.tokens.literals.LitteralToken.AFOREMENTIONED;
 import static org.ex.incantation.tokens.literals.LitteralToken.AIR;
 import static org.ex.incantation.tokens.literals.LitteralToken.BALL;
@@ -131,11 +133,25 @@ public class Parser {
 	}
 
 	private static NumberValue recognizeNumber(ReadAheadTokenizer input) throws UnexpectedTokenException {
-		if (input.peek() instanceof NumberValue) {
+		Token t = input.peek();
+		
+		if (t instanceof NumberValue) {
 			return (NumberValue) input.next();
 		}
 		
-		return new NumberValue(0);
+		int i = 0;
+		
+		while (t == ONE || t == ZERO) {
+			input.next();
+			
+			if (t == ONE) {
+				i = (i << 1) | 1;
+			}
+			
+			t = input.peek();
+		}
+		
+		return new NumberValue(i);
 	}
 
 	private static Search recognizeSearch(ReadAheadTokenizer input) throws UnexpectedTokenException {
