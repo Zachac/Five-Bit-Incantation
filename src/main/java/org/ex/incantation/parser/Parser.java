@@ -29,6 +29,7 @@ import static org.ex.incantation.tokens.literals.LitteralToken.WATER;
 import static org.ex.incantation.tokens.literals.LitteralToken.WHILE;
 
 import org.ex.incantation.exception.UnexpectedTokenException;
+import org.ex.incantation.parser.tokenizer.ReadAheadTokenizer;
 import org.ex.incantation.tokens.Token;
 import org.ex.incantation.tokens.actions.Action;
 import org.ex.incantation.tokens.actions.AdditionallyAction;
@@ -70,7 +71,6 @@ import org.ex.incantation.tokens.types.Type;
 
 public class Parser {
 
-	
 	public static Action recognizeAction(ReadAheadTokenizer input) throws UnexpectedTokenException {
 		Token t = input.next();
 		Action result = null;

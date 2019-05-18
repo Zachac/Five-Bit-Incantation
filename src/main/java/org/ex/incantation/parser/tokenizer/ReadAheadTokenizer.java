@@ -1,15 +1,14 @@
-package org.ex.incantation.parser;
-
-import java.util.Iterator;
+package org.ex.incantation.parser.tokenizer;
 
 import org.ex.incantation.tokens.Token;
 
-public class ReadAheadTokenizer extends Tokenizer {
+public class ReadAheadTokenizer implements Tokenizer {
 
+	private Tokenizer tokenizer;
 	private Token t;
 	
-	public ReadAheadTokenizer(Iterator<String> s) {
-		super(s);
+	public ReadAheadTokenizer(Tokenizer t) {
+		this.tokenizer = t;
 	}
 	
 	@Override
@@ -20,7 +19,7 @@ public class ReadAheadTokenizer extends Tokenizer {
 			return result;
 		}
 		
-		return super.next();
+		return tokenizer.next();
 	}
 	
 	@Override
@@ -29,7 +28,7 @@ public class ReadAheadTokenizer extends Tokenizer {
 			return true;
 		}
 		
-		return super.hasNext();
+		return tokenizer.hasNext();
 	}
 	
 	public Token peek() {
